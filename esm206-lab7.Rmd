@@ -135,5 +135,20 @@ augment(penguin_lm2)
 
 ```
 
+We haven't looked at residuals yet!
+
+use `plot()` to look at model diagnostics
+
+```{r}
+plot(penguin_lm2)
+
+# Q-Q plot will assess normality of the residuals - VERY NORMAL
+# first and third plots will assess homoscedasticity - what do the spread of the residuals look like? - vertical distribution.  Yes, fairly evenly spread. 
+# last plot will show points (major outliers) that are pulling a disproportionate amount of weight - none in this dataset
+# assumption of independence - just need to think about the data (is one error related to another?)
+```
+
+Remember: all models are wrong!
+
 
 
