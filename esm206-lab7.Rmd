@@ -15,6 +15,7 @@ library(kableExtra)
 library(broom)
 library(GGally)
 library(modelsummary)
+library(stargazer)
 ```
 
 Exploring the penguins dataset
@@ -150,5 +151,26 @@ plot(penguin_lm2)
 
 Remember: all models are wrong!
 
+But, my conceptual understanding and expertise allows me to responsibly determine that penguin species, sex, and flipper length (mm) are reasonable predictor variables for body mass. Make sure you're thinking hard about variables and different variable combinations. Diagnostic plots all check out for normaity of residuals, homoscedasticity, and no worrisome outliers (last one not an assumption). 
 
+Can report more than one model in the outcome!  But make sure you're thinking about what makes sense. 
+
+### Make output tables
+
+Using `modelsummary`
+In key - see example using kableExtra and stargazer
+
+```{r}
+# if stored to name...
+
+modelsummary(penguin_lm2)
+```
+
+to do stargazer - clean, almost publishable tables - just need to update the names
+
+```{r, results = "asis"}
+# have to add the results = "asis" because its already in html
+
+stargazer(penguin_lm2, type = "html")
+```
 
